@@ -3,11 +3,14 @@ body {
     height: 100vh;
 
     font-size: 1.5em;
+
+    text-align: center;
 }
 
 #input_div {
     margin: auto;
     width: 50%;
+    display: inline-block;
 }
 
 #input_div input{
