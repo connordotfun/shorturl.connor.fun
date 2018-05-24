@@ -15,7 +15,8 @@ function shorten_url() {
     var short = btoa(toShorten.replace("http://", "").replace("https://", ""));
     console.log(short);
 
-    outputDiv.innerHTML = "<a href=\"" + shortPath + short + "\">" + shortPath + short +"</a>";
+    outputDiv.innerHTML = "<a id=\"urllink\" href=\"" + shortPath + short + "\">" + shortPath + short +"</a> <br> COPIED URL TO CLIPBOARD THANKYOU";
+    copyToClipboard(shortPath + short);
 }
 
 function getParameterByName(name, url) {
@@ -27,6 +28,15 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+function copyToClipboard(str) {
+    var el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  }
 
 window.onload = function() {
     shortenedUrl = getParameterByName(queryParam, window.location);
