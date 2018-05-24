@@ -1,0 +1,17 @@
+body {
+    width: 100vw;
+    height: 100vh;
+
+    font-size: 1.5em;
+}
+
+#input_div {
+    margin: auto;
+    width: 50%;
+}
+
+#input_div input{
+    margin: auto;
+    width: 50%;
+    font-size: inherit;
+}
